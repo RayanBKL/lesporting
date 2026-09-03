@@ -1,0 +1,190 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 24px;
+}
+
+.bgContainer {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.48) contrast(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(18, 18, 15, 0.35) 0%,
+    rgba(18, 18, 15, 0.75) 60%,
+    rgba(18, 18, 15, 0.95) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Conteneur du Logo avec Lumière Masquée */
+.logoShineContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 44px;
+  max-width: 360px;
+  width: 82vw;
+  aspect-ratio: 876 / 683;
+}
+
+.baseLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 14px 35px rgba(0, 0, 0, 0.75));
+  transition: transform 0.5s var(--ease);
+}
+
+.logoShineContainer:hover .baseLogo {
+  transform: scale(1.02);
+}
+
+/* Couche de reflet lumineux MASQUÉE STRICTEMENT sur les pixels du logo */
+.logoMaskShine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: url('/logo-official.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('/logo-official.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.shineBeam {
+  position: absolute;
+  top: -60%;
+  left: 0;
+  width: 50%;
+  height: 220%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.15) 80%,
+    transparent 100%
+  );
+  will-change: transform, opacity;
+  animation: shineSweep 3.6s ease-in-out infinite;
+}
+
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-160%) rotate(25deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  74% {
+    transform: translateX(290%) rotate(25deg);
+    opacity: 1;
+  }
+  84% {
+    opacity: 0;
+    transform: translateX(290%) rotate(25deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-160%) rotate(25deg);
+  }
+}
+
+/* Actions CTAs épurés */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: var(--olive);
+  color: var(--bg-dark);
+  padding: 16px 44px;
+  border-radius: 2px;
+  transition: all 0.35s var(--ease);
+}
+
+.primaryCta:hover {
+  background-color: var(--olive-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(177, 175, 138, 0.35);
+}
+
+.secondaryCta {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  border: 1px solid rgba(177, 175, 138, 0.4);
+  padding: 16px 44px;
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
+  background: rgba(18, 18, 15, 0.4);
+  transition: all 0.35s var(--ease);
+}
+
+.secondaryCta:hover {
+  border-color: var(--olive);
+  background-color: rgba(177, 175, 138, 0.12);
+  color: var(--olive-light);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+  .primaryCta, .secondaryCta {
+    width: 100%;
+    text-align: center;
+  }
+}

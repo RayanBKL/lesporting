@@ -1,0 +1,225 @@
+.espritSection {
+  padding: 120px 0;
+  background-color: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.mainHeader {
+  text-align: left;
+  max-width: 800px;
+  margin-bottom: 72px;
+}
+
+.locationTag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--olive);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.mainTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.scriptEmphasis {
+  font-family: var(--font-script) !important;
+  font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+  color: var(--olive);
+  font-style: normal;
+  display: inline-block;
+  margin-top: 4px;
+  text-shadow: 0 4px 18px rgba(177, 175, 138, 0.2);
+}
+
+.underlineBar {
+  width: 70px;
+  height: 2px;
+  background-color: var(--olive);
+  margin-top: 16px;
+}
+
+/* Story Grid */
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.visualCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainImageCard {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.mainImg {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.mainImageCard:hover .mainImg {
+  transform: scale(1.03);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 24px 20px;
+  background: linear-gradient(to top, rgba(18, 18, 15, 0.95), transparent);
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeScript {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  color: var(--olive);
+  line-height: 1;
+}
+
+.badgeSub {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive-pale);
+  margin-top: 2px;
+}
+
+.secondaryImageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.smallImgCard {
+  position: relative;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.smallImgCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.smallImgCard:hover img {
+  transform: scale(1.05);
+}
+
+.cardTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  background: rgba(18, 18, 15, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(177, 175, 138, 0.3);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive-light);
+  border-radius: 2px;
+}
+
+/* Text Column */
+.textCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.quoteBox {
+  border-left: 2px solid var(--olive);
+  padding-left: 24px;
+  margin-bottom: 32px;
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--olive-light);
+  font-style: italic;
+}
+
+.leadParagraph {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-light);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.bodyParagraph {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  border-top: 1px solid rgba(177, 175, 138, 0.15);
+  padding-top: 32px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.featureIcon {
+  color: var(--olive);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.featureTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.featureDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

@@ -1,0 +1,123 @@
+/* ================================================
+   LE SPORTING SAINT-TROPEZ — DESIGN SYSTEM
+   Palette inspirée de la carte officielle :
+   Vert Olive #B1AF8A · Ivoire #F6F4EE · Espresso Profond #12120F
+   ================================================ */
+
+@font-face {
+  font-family: 'Signature';
+  src: url('/InstaStorySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palette Officielle Le Sporting */
+  --olive:        #B1AF8A;
+  --olive-light:  #D5D3BE;
+  --olive-pale:   #EAE8DC;
+  --olive-dark:   #8C8A66;
+  --olive-deep:   #5C5A3E;
+
+  /* Neutres & Fonds */
+  --bg-dark:      #12120F;
+  --bg-dark-card: #1C1B17;
+  --bg-dark-soft: #262520;
+  
+  --bg-light:     #F6F4EE;
+  --bg-light-card:#FFFFFF;
+  --bg-card-pill: #8C8A66;
+
+  /* Typographie & Couleurs de texte */
+  --text-light:   #F7F6F2;
+  --text-muted:   #A6A498;
+  --text-dark:    #22211C;
+  --text-dark-muted: #6B695E;
+
+  /* Polices */
+  --font-serif:   'EB Garamond', Georgia, serif;
+  --font-sans:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script:  'Signature', cursive;
+
+  /* Transitions */
+  --ease:         cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* Italiques élégants serif avec support parfait des accents français */
+em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--olive);
+}
+
+/* Classe dédiée pour la police script Signature (textes anglais/ascii sans accents) */
+.scriptAccent {
+  font-family: var(--font-script) !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  color: var(--olive);
+  letter-spacing: 0.02em;
+  display: inline-block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--olive-dark);
+  border-radius: 3px;
+}
